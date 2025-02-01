@@ -1,9 +1,10 @@
 import React from 'react'
+import cookies from '@/assets/cookies.svg'
 
 const About = () => {
   return (
     <div>
-      Test
+      <img src={cookies} alt="Cookies" width={200}/>
     </div>
   )
 }
