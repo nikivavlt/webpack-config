@@ -1,6 +1,7 @@
 import { ModuleOptions } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/types';
+import { buildBabelLoader } from './babel/buildBabelLoader';
 
 export default function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
   const isDev = options.mode === 'development';
@@ -23,7 +24,7 @@ export default function buildLoaders(options: BuildOptions): ModuleOptions['rule
       transpileOnly: true
     }
   }
-
+  
   // const tsLoader = {
   //   exclude: /node_modules/,
   //   test: /\.tsx?$/, 
@@ -31,11 +32,12 @@ export default function buildLoaders(options: BuildOptions): ModuleOptions['rule
   //     {
   //       loader: 'ts-loader',
   //       options: {
-  //         transpileOnly: true
+    //         transpileOnly: true
   //       }
   //     },
   //   ]
   // }
+  const babelLoader = buildBabelLoader(options);
 
-  return [imageLoader, scssLoader, tsLoader];
+  return [imageLoader, scssLoader, babelLoader];
 }

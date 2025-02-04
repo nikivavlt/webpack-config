@@ -1,3 +1,9 @@
 body {
   background: purple;
 }
+
+video {
+  width: 100%;
+  max-width: 1920px; /* Prevent browser from scaling down */
+  height: auto;
+}
