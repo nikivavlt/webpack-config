@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom/client';
+import { Suspense } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from '@/components/App';
 import { About } from '@/pages/about';
-import { Suspense } from 'react';
 
 const rootElement = document.getElementById('root');
 const root = ReactDOM.createRoot(rootElement);

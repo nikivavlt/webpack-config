@@ -1,4 +1,3 @@
-import React from 'react'
 import cookies from '@/assets/cookies.svg'
 
 const About = () => {
